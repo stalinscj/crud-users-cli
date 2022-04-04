@@ -14,7 +14,7 @@ git clone https://github.com/stalinscj/crud-users-cli.git
 ```
 
 ```sh
-cd crud_users_cli
+cd crud-users-cli
 ```
 
 ```sh
