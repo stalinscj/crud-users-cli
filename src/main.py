@@ -3,6 +3,7 @@ import argparse
 import inject
 
 from src.bootstrap import boot
+from src.commands.ReadUserCommand import ReadUserCommand
 from src.commands.CreateUserCommand import CreateUserCommand
 
 
@@ -14,6 +15,7 @@ def main(args: list = None):
 
     sub_parsers = parser.add_subparsers(help='User management', dest='cmd')
 
+    ReadUserCommand(sub_parsers)
     CreateUserCommand(sub_parsers)
 
     parser.set_defaults(func=parser.print_help)
