@@ -3,6 +3,7 @@ import argparse
 import inject
 
 from src.bootstrap import boot
+from src.commands.CreateUserCommand import CreateUserCommand
 
 
 def main(args: list = None):
@@ -10,6 +11,10 @@ def main(args: list = None):
         boot()
 
     parser = argparse.ArgumentParser(description='User CRUD')
+
+    sub_parsers = parser.add_subparsers(help='User management', dest='cmd')
+
+    CreateUserCommand(sub_parsers)
 
     parser.set_defaults(func=parser.print_help)
 
